@@ -244,7 +244,7 @@ def create_train_state( cfg: Any, data_shape: Tuple ) -> Tuple[nn.Module, nn.Mod
                                                         min_sigma=cfg.AUG["blur"]["min_sigma"], 
                                                         max_sigma=cfg.AUG["blur"]["max_sigma"], 
                                                         kernel_size=cfg.AUG["blur"]["kernel_size"],
-                                                        time_invar=False)
+                                                        time_invar=True)
   else:
     pose_aug_map = None 
 

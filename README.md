@@ -13,7 +13,7 @@ Official code release for XFactor, enabling transferable self-supervised novel v
 
 
 <div align="center">
-    <a href="https://www.google.com/"><strong>Project Page</strong></a> |
+    <a href="https://www.mitchel.computer/xfactor/"><strong>Project Page</strong></a> |
     <a href="https://www.google.com/"><strong>Paper</strong></a> 
 </div>
 

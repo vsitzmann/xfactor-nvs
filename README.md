@@ -114,7 +114,7 @@ context_sequence = ...
 # B x 2 x 256, P[:, 0, :] is zeros
 ZT = PoseEnc.apply({"params":params_mv["PoseEnc"]}, target_images)
 
-# Compute poses of context sequence (requires a bit of reshape + tile ju-jitsu if you want to vectorize it)
+# Compute poses of context sequence (requires a bit of reshape + tile jiu jitsu if you want to vectorize it)
 
 # Form context pairs
 # B*5 x 2 x 256 x 256 x 3

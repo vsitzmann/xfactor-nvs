@@ -31,7 +31,7 @@ pip install -r requirements.txt
 ## Data 
 Our models are trained on a combined video dataset consisting of all of RE10K, DL3DV, MVImgNet, and CO3Dv2. We use `grain` for dataloading. Our dataloader is contained in the `data/video_dataset.py` file. Our dataloader is designed to stream video frames: Each dataset is stored as a list of filepaths, where each entry corresponds to the location of a video. Our dataloader makes some assumptions about the file structure for each dataset based on our internal copies of these datasets. You may need to modify the syntax to align with your copies of these datasets. 
 
-The train/test splits we use in the paper are slightly different than what will be produced by the dataloader here due to modifications we made after the fact to ensure consistency across systems.  The JSON files containing our train/test splits for each dataset as used in the paper can be downloaded [here](https://www.dropbox.com/scl/fi/72hfsdgc14wkzf2i7h4ob/paper_splits.zip?rlkey=vtpe1p3lxg53x0f2hmssw3wdg&st=1o3i23uy&dl=0).  Note that the sequence IDs are the dictionary keys.  
+The train/test splits we use in the paper are slightly different than what will be produced by the dataloader here due to modifications we made after the fact to ensure consistency across systems.  The JSON files containing our train/test splits for each dataset as used in the paper can be downloaded [here](https://www.dropbox.com/scl/fi/q6qnmd7b7816suprbv8d7/paper_splits.zip?rlkey=y40aqidrw09tbkpxu0n02rh3v&st=o6u5s90x&dl=0).  Note that the sequence IDs are the dictionary keys.  
 
 ## Training
 Training scripts and configs for stereo-monocular and multi-view XFactor are provided in the `train` and `train/configs` directories. The maximum baseline (maximal distance between the start and end frames in a sequence) for each dataset is given by the `max_win_len_end` keys in the `DATASETS` dictionary.  
@@ -43,17 +43,22 @@ The stereo-monocular model (with batch size 256) was trained on two NVIDIA H200 
 The default setting for the multi-view config trains with five context views, i.e. `MAX_VIEWS = 5`. This can be changed as desired. 
 
 ## Checkpoints 
-Pre-trained checkpoints for both stereo-monocular and multi-view XFactor will be provided soon. 
-<!---
 We provide pre-trained checkpoints for both stereo-monocular and multi-view XFactor. These checkpoints are slightly different than the ones use in the paper for evaluation, as they are trained on the data split produced by the dataloader here (see above). 
 
 | Model | 
 | ----- | 
-| [Stereo-Monocular XFactor](https://www.google.com/) | 
-| [Multi-View XFactor](https://www.google.com/) | 
+| [Stereo-Monocular XFactor](https://www.dropbox.com/scl/fi/4cuw2esx0ofjgpqj4cbiz/stereo_monocular.zip?rlkey=ixdaaqzae9heh0i2tc4wxvz24&st=qanaz3d1&dl=0) | 
+| [Multi-View XFactor](https://www.dropbox.com/scl/fi/3qkm7knlkznfajg4w75i5/multiview.zip?rlkey=lsk7islgffgaa2dxwshfvpxqc&st=zg6cexiv&dl=0) | 
 
-The `Render` module in multi-view XFactor is trained with five context views. 
--->
+Download and unzip these files into a desired directory. Then, the paramaters can be loaded as follows
+```
+from clu import checkpoint
+
+params_sm = checkpoint.load_state_dict("/your/directory/stereo_monocular/checkpoints-0")["params"]
+params_mv = checkpoint.load_state_dict("/your/directory/multiview/checkpoints-0")["params"]
+```
+
+Note that the `Render` module in multi-view XFactor is trained with five context views so inference will be most effective with five context views.
 
 ## Usage 
 

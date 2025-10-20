@@ -18,6 +18,7 @@ trimesh
 torch==2.7.0 --extra-index-url https://download.pytorch.org/whl/cu128
 torchvision==0.22.0 --extra-index-url https://download.pytorch.org/whl/cu128
 
+tensorflow-cpu
 jax[cuda12]==0.7.2
 jaxlib==0.7.2+cuda121
 jaxtyping

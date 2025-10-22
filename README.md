@@ -51,7 +51,7 @@ We provide pre-trained checkpoints for both stereo-monocular and multi-view XFac
 | [Multi-View XFactor](https://www.dropbox.com/scl/fi/3qkm7knlkznfajg4w75i5/multiview.zip?rlkey=lsk7islgffgaa2dxwshfvpxqc&st=zg6cexiv&dl=0) | 
 
 Download and unzip these files into a desired directory. Then, the paramaters can be loaded as follows
-```
+```python
 from clu import checkpoint
 
 params_sm = checkpoint.load_state_dict("/your/directory/stereo_monocular/checkpoints-0")["params"]
@@ -62,7 +62,7 @@ Note that the `Render` module in multi-view XFactor is trained with five context
 
 ## Usage 
 
-```
+```python
 import jax
 import jax.numpy as jnp
 import flax 

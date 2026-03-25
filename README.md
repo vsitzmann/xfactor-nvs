@@ -1,7 +1,8 @@
 # XFactor: True Self-Supervised Novel View Synthesis is Transferable 
-## ICLR 2026 Oral
-Official code release for XFactor, enabling transferable self-supervised novel view synthesis.
 
+![ICLR 2026 Oral](https://img.shields.io/badge/ICLR%202026-Oral-gold)
+
+Official code release for XFactor, enabling transferable self-supervised novel view synthesis.
 
 <p align="center">  
     <a href="https://www.mitchel.computer/">Thomas W. Mitchel</a>,

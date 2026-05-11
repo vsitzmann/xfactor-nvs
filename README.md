@@ -21,7 +21,7 @@ Official code release for XFactor, enabling transferable self-supervised novel v
 
 <br>
 
-This code base is implemented in JAX. An official Pytorch implementation is forthcoming. 
+This code base is implemented in JAX. The PyTorch implementation is available [here](https://github.com/tomato1mule/xfactor-torch).
 ## Installation
 We reccommend creating a dedicated environment before installing the requirements.
 ```
